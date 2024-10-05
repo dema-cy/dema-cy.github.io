@@ -1,0 +1,166 @@
+<!DOCTYPE html >
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online resume</title>
+    <link rel="stylesheet" href="style.css"> 
+
+</head>
+
+<body>
+<header>
+ <p></p>   
+</header>    
+
+<main>
+<section id="left">
+<h1>Dema Bukhari</h1>
+<img src="my-photo.png" alt="logo" height="200" width="200" >  
+
+ <h2>Contact</h2><hr>
+
+ <section>
+ <h4>Phone:</h4>
+ <p>(+966) 555015614</p>  
+
+ <h4>Email:</h4>
+ <p><a href="mailto:2210481@uj.edu.sa">2210481@uj.edu.sa</a></p>  
+ 
+ <h4>Linkedin:</h4>
+ <p><a href="https://www.linkedin.com/in/dema-bukhari-aab971326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/dema-bukhari</a></p>  
+ </section>
+
+<br>
+
+ <section>
+ <h2>Languages</h2><hr>
+ <p>English-B2</p>
+ </section>
+
+<br>
+
+ <section>
+ <h2>Hobbies</h2><hr>
+ <ul>
+  <li>Drawing</li>  
+  <li>Reading</li> 
+  <li>Design</li> 
+ </ul>
+ </section>
+
+</section>
+
+
+
+<section id="right">
+
+<section class="obj">
+<h2>Objectives</h2>
+<p>A student in Jeddah University at College of Computer Science and Engineering Majoring in CyberSecurity.
+    Skilled in programming language such as Java,Html ,and C
+</p>  
+</section>
+
+<section class="edu">
+<h2>Education</h2>
+<ul> 
+<li>Started at University of jeddah in 2022</li>
+<li>Expected Graduation Time 2026</li>
+<li>GPA:4.9/5</li>
+</ul> 
+</section>
+
+<div class="cer">
+<h2>Certificates</h2>
+<ul> 
+    <li>Certificate in Supply Chain Managment</li>
+    <li>Introduction to CyberSecurity</li>
+    <li>Certificate of excellence</li>
+</ul> 
+</div>
+
+<section class="pro">
+<h2>Projects</h2>
+<ul> 
+    <li><h4>Managment income</h4> 
+    A program that takes the annnual salary and manage it for each needs such as food , emergensy,
+    and other needs and take the extra amount to invest it</li>
+
+    <li ><h4>SeniorSafeGuard</h4>
+    A program that work as an elderly helper 
+        ,it help them to take care of themselves 
+        The program notifies them vocally about the medication appointment
+    </li>
+        
+    
+</ul> 
+
+</section>
+
+    <section class="carousel">
+        <div class="carousel-images">
+            <img src="project.png" alt="Management income interface">
+
+            <img src="image.png" alt="Management income interface">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prevBtn">&leftarrow;</button>
+            <button id="nextBtn">&rightarrow;</button>
+        </div>
+    </section>
+
+
+
+    
+</section>
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let counter = 0;
+    const size = images[0].clientWidth;
+
+    function updateCarousel() {
+        carouselImages.style.transform = `translateX(${-size * counter}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (counter >= images.length - 1) {
+            counter = 0; // Reset to the first image
+        } else {
+            counter++;
+        }
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (counter <= 0) {
+            counter = images.length - 1; // Go to the last image
+        } else {
+            counter--;
+        }
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', () => {
+        // Ensure the size is updated if the window is resized
+        size = images[0].clientWidth;
+        updateCarousel();
+    });
+</script>
+
+
+</main>
+
+<footer> 
+<p></p>
+</footer>
+</body>
+
+</html>
